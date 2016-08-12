@@ -1,0 +1,64 @@
+syntax = "proto2";
+
+
+
+message TimeStamp {
+    optional sint32 seconds = 1;
+    optional sint32 microseconds = 2;
+}
+
+message Container {
+    optional sint32 dataType = 1;
+    optional bytes serializedData = 2;
+    optional TimeStamp sent = 3;
+    optional TimeStamp received = 4;
+}
+
+message HDF {
+    optional bool blinker = 1;
+    optional sint32 brake = 2;
+    optional bool brake_computer = 3;
+    optional sint32 brake_user = 4;
+    optional double car_accel = 5;
+    optional double fiber_accel_x = 6;
+    optional double fiber_accel_y = 7;
+    optional double fiber_accel_z = 8;
+    optional double fiber_compass_x = 9;
+    optional double fiber_compass_y = 10;
+    optional double fiber_compass_z = 11;
+    optional double fiber_gyro_x = 12;
+    optional double fiber_gyro_y = 13;
+    optional double fiber_gyro_z = 14;
+    optional double gas = 15;
+    optional double gear_choice = 16;
+    optional double rpm = 17;
+    optional double rpm_post_torque = 18;
+    optional bool selfdrive = 19;
+    optional double speed = 20;
+    optional double speed_abs = 21;
+    optional double speed_fl = 22;
+    optional double speed_fr = 23;
+    optional double speed_rl = 24;
+    optional double speed_rr = 25;
+    optional bool standstill = 26;
+    optional double steering_angle = 27;
+    optional double steering_torque = 28;    
+    optional double velodyne_gps_latitude = 29;
+    optional double velodyne_gps_longitude = 30;
+    optional double velodyne_heading = 31;
+}
+
+message SharedImage {
+    optional string name = 1;
+    optional uint32 size = 2;
+    optional uint32 width = 3;
+    optional uint32 height = 4;
+    optional uint32 bytesPerPixel = 5;
+}
+
+message H264Frame {
+    optional string h264Filename = 1;    // Name of the file containing the h264 stream.
+    optional uint32 frameIdentifier = 2; // Increasing identifier of this frame.
+    optional uint32 frameSize = 3;       // Size of the h264-encoded frame in bytes.
+    optional SharedImage associatedSharedImage = 4; // Original SharedImage data structure.
+}
