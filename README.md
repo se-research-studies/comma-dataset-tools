@@ -4,6 +4,7 @@ comma-dataset-tools are a small collection of python scripts to convert comma.ai
 
 ## hdf2protoRec.py
 Converts hdf5 to OpenDaVINCI .rec with message defined in comma.proto. 
+
 Usage:
 
     ./hdf2protoRec.py messages.h5 output.rec cam0.h264
@@ -17,17 +18,22 @@ use .h264 as file extension.
 Extracts all Images form camera-*.h5 and creates a h264 stream, using ffmpeg 
 Using command similar to:
 "ffmpeg -f image2 -pattern_type glob -i '*.png' -vcodec libx264 -pix_fmt yuv420p -preset ultrafast -qp 0 cam0.h264"
-Usage: ./hdfVideoExtractor.py input.h5"
+
+Usage:
+
+    ./hdfVideoExtractor.py input.h5"
+    
 Command will create random named folder with png files and generates "input.h264" file
 You should delete the random named directory after process has finished
 
-*  protoPrint
+##  protoPrint
 Prints content of *.rec file on terminal
-Usage:  protoPrint.py input.rec
 
+Usage:  
 
+    ./protoPrint.py input.rec
 
-* playing rec file
+## playing rec file
 For playing the rec files you need, to use odsupercomponent, odcockpit, and odplayerh264. In the standard configuration you need to have a recorder.rec and a corresponding cam0.h264 file
 Alternatively you can change the configuration file that odsupercomponent is using. The configuration file must be in the same directory you calling odsupercomponent from.
 (you can find one in your OpenDaVINCI install directory "bin/configuration")
