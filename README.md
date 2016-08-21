@@ -29,9 +29,27 @@ You should delete the random named directory after process has finished
 ##  protoPrint
 Prints content of *.rec file on terminal
 
-Usage:  
+Usage:
 
     ./protoPrint.py input.rec
+
+##  Building library for OpenDaVINCI
+To build the ODVDCommaAI library, you need to have OpenDaVINCI 4 or later. Let's
+assume you have installed OpenDaVINCI 4 at /opt/od4, then you can build this
+library as follows:
+
+    mkdir build && cd build
+    PATH=/opt/od4/bin:$PATH cmake -D CMAKE_INSTALL_PREFIX=/opt/od4 ..
+    make
+    make install
+
+##  Building library for OpenDaVINCI with CxxTest
+To use CxxTest for the test cases, you need to point CMake to cxxtest:
+
+    mkdir build && cd build
+    PATH=/opt/od4/bin:$PATH cmake -D CMAKE_INSTALL_PREFIX=/opt/od4 -D CXXTEST_INCLUDE_DIR=<CxxTest directory> ..
+    make
+    make install
 
 ## playing rec file
 For playing the rec files you need, to use odsupercomponent, odcockpit, and odplayerh264. In the standard configuration you need to have a recorder.rec and a corresponding cam0.h264 file
