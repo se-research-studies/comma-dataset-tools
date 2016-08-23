@@ -59,4 +59,4 @@ All components shold be started with same cid (eg. --cid=123)
 First start odsupercomponent, then odcockpit, then change to the folder with the recordings and start odplayerh264 with "--freq=10"
 Alter double click on livefeed and on SharedImageViewer you should se something similar to this:
 
-<img src="https://cloud.githubusercontent.com/assets/1830710/17625826/ca3ae1ee-60aa-11e6-86e2-a79d32d8ff50.png" alt="Screenshot">
+<img src="https://raw.githubusercontent.com/se-research-studies/comma-dataset-tools/master/odcockpit.gif" alt="Screenshot">
